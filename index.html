@@ -1,19 +1,1365 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ExpenseOS - Intelligent Expense Tracker</title>
-    <meta name="description" content="Track your expenses in real-time with beautiful 3D visualizations" />
-    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aarya Shikhare — Electronics & Telecommunication Engineering student passionate about AI, Space Technology, and Embedded Systems. Explore my projects, skills, and resume." />
+  <meta name="keywords" content="Aarya Shikhare, portfolio, EXTC engineer, AI, Android, Rocketry, Mumbai, Atharva College" />
+  <meta property="og:title" content="Aarya Shikhare | Portfolio" />
+  <meta property="og:description" content="Electronics & Telecommunication Engineering student | AI | Space Tech | Embedded Systems" />
+  <meta property="og:image" content="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Aarya Shikhare | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div id="loading-screen" class="loading-screen" aria-hidden="true">
+    <div class="loader">
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <div class="loader-text">AS</div>
+    </div>
+  </div>
+
+  <!-- ===== SCROLL PROGRESS BAR ===== -->
+  <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" aria-label="Aarya Shikhare Home">
+        <span class="logo-text">AS</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li role="none"><a href="#home"         class="nav-link active" role="menuitem">Home</a></li>
+        <li role="none"><a href="#about"        class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="#skills"       class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="#experience"   class="nav-link" role="menuitem">Experience</a></li>
+        <li role="none"><a href="#projects"     class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="#resume"       class="nav-link" role="menuitem">Resume</a></li>
+        <li role="none"><a href="#contact"      class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="hero" aria-label="Hero">
+      <canvas id="particles-canvas" aria-hidden="true"></canvas>
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+
+      <div class="hero-container">
+        <div class="hero-content reveal-left">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Available for Internships &amp; Opportunities</span>
+          </div>
+
+          <h1 class="hero-name">
+            Hi, I'm <span class="gradient-text">Aarya Shikhare</span>
+          </h1>
+
+          <h2 class="hero-title">
+            I'm a <span class="typed-text" id="typed-text"></span><span class="cursor" aria-hidden="true">|</span>
+          </h2>
+
+          <p class="hero-description">
+            Motivated Electronics &amp; Telecommunication Engineering student at Atharva College of Engineering,
+            passionate about AI, Space Technology, Embedded Systems, and building solutions that matter.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="assets/Aarya_Shikhare_original_resume.pdf" download class="btn btn-primary" aria-label="Download Resume">
+              <i class="fas fa-download" aria-hidden="true"></i>
+              Download Resume
+            </a>
+            <a href="#contact" class="btn btn-secondary" aria-label="Contact Aarya">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              Contact Me
+            </a>
+          </div>
+
+          <div class="hero-socials" aria-label="Social links">
+            <a href="https://linkedin.com/in/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:aaryak012@gmail.com" class="social-icon" aria-label="Email">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+            <a href="tel:+919321562271" class="social-icon" aria-label="Phone">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper reveal-right">
+          <div class="hero-image-container">
+            <div class="profile-glow" aria-hidden="true"></div>
+            <div class="orbit orbit-1" aria-hidden="true">
+              <div class="orbit-dot"></div>
+            </div>
+            <div class="orbit orbit-2" aria-hidden="true">
+              <div class="orbit-dot"></div>
+            </div>
+            <img
+              src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+              alt="Aarya Shikhare - Profile Photo"
+              class="profile-img"
+              id="profile-img"
+              loading="eager"
+            />
+            <div class="floating-badge fb-1">
+              <i class="fas fa-rocket" aria-hidden="true"></i>
+              <span>Space Tech</span>
+            </div>
+            <div class="floating-badge fb-2">
+              <i class="fas fa-microchip" aria-hidden="true"></i>
+              <span>IoT & Embedded</span>
+            </div>
+            <div class="floating-badge fb-3">
+              <i class="fas fa-brain" aria-hidden="true"></i>
+              <span>Gen AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll Down</span>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" class="section about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">Get To Know Me</span>
+          <h2 id="about-heading" class="section-title">About <span class="gradient-text">Me</span></h2>
+          <div class="section-divider" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image-col reveal-left">
+            <div class="about-img-wrapper">
+              <div class="about-img-bg" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+                alt="Aarya Shikhare"
+                class="about-img"
+                loading="lazy"
+              />
+              <div class="about-img-card">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <div>
+                  <strong>BE EXTC</strong>
+                  <span>Atharva University</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-content reveal-right">
+            <h3 class="about-subtitle">Electronics &amp; Telecommunication Engineering Student</h3>
+            <p class="about-bio">
+              I'm <strong>Aarya Shikhare</strong>, a motivated third-year BE EXTC student at Atharva College of Engineering.
+              I blend hardware and software to create impactful solutions — from IoT health devices to spacecraft simulations.
+            </p>
+            <p class="about-bio">
+              Certified in Core Java, SQL, Generative AI, Rocketry Management, and Android Development, I constantly
+              push boundaries at the intersection of technology and real-world problem-solving.
+            </p>
+
+            <div class="about-details">
+              <div class="detail-item">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <div>
+                  <span class="detail-label">Education</span>
+                  <span class="detail-value">Atharva College of Engineering, Mumbai</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                <div>
+                  <span class="detail-label">Duration</span>
+                  <span class="detail-value">2022 – 2027 · 3rd Year · CGPA 6.21</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <div>
+                  <span class="detail-label">Location</span>
+                  <span class="detail-value">Mumbai, Maharashtra, India</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-language" aria-hidden="true"></i>
+                <div>
+                  <span class="detail-label">Languages</span>
+                  <span class="detail-value">English · Hindi · Marathi · Deutsch</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-heart" aria-hidden="true"></i>
+                <div>
+                  <span class="detail-label">Interests</span>
+                  <span class="detail-value">Dance · Photography · Poetry · Traveling</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-cta">
+              <a href="assets/Aarya_Shikhare_original_resume.pdf" download class="btn btn-primary">
+                <i class="fas fa-download" aria-hidden="true"></i> Download Resume
+              </a>
+              <a href="#contact" class="btn btn-outline">
+                <i class="fas fa-comments" aria-hidden="true"></i> Let's Talk
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="stats-grid reveal-up">
+          <div class="stat-card" data-target="3">
+            <div class="stat-icon"><i class="fas fa-folder-open" aria-hidden="true"></i></div>
+            <div class="stat-number"><span class="counter" data-target="3">0</span>+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-card" data-target="5">
+            <div class="stat-icon"><i class="fas fa-certificate" aria-hidden="true"></i></div>
+            <div class="stat-number"><span class="counter" data-target="5">0</span>+</div>
+            <div class="stat-label">Certifications Earned</div>
+          </div>
+          <div class="stat-card" data-target="10">
+            <div class="stat-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+            <div class="stat-number"><span class="counter" data-target="10">0</span>+</div>
+            <div class="stat-label">Technologies Learned</div>
+          </div>
+          <div class="stat-card" data-target="4">
+            <div class="stat-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
+            <div class="stat-number"><span class="counter" data-target="4">0</span></div>
+            <div class="stat-label">Languages Spoken</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section id="skills" class="section skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">What I Know</span>
+          <h2 id="skills-heading" class="section-title">My <span class="gradient-text">Skills</span></h2>
+          <div class="section-divider" aria-hidden="true"></div>
+          <p class="section-desc">A curated set of technical skills acquired through coursework, certifications, and hands-on projects.</p>
+        </div>
+
+        <!-- Programming Languages -->
+        <div class="skills-category reveal-up">
+          <h3 class="skills-cat-title">
+            <i class="fas fa-terminal" aria-hidden="true"></i> Programming Languages
+          </h3>
+          <div class="skills-grid">
+            <div class="skill-card" aria-label="SQL skill">
+              <div class="skill-icon-wrap" style="--skill-color:#38BDF8">
+                <i class="fas fa-database" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top">
+                  <span class="skill-name">SQL</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="85" style="--skill-color:#38BDF8"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card" aria-label="Java skill">
+              <div class="skill-icon-wrap" style="--skill-color:#F89820">
+                <i class="fab fa-java" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top">
+                  <span class="skill-name">Java</span>
+                  <span class="skill-pct">78%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="78" style="--skill-color:#F89820"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card" aria-label="Python skill">
+              <div class="skill-icon-wrap" style="--skill-color:#3776AB">
+                <i class="fab fa-python" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-pct">72%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="72" style="--skill-color:#3776AB"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card" aria-label="JavaScript skill">
+              <div class="skill-icon-wrap" style="--skill-color:#F7DF1E">
+                <i class="fab fa-js-square" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-pct">65%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="65" style="--skill-color:#F7DF1E"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card" aria-label="Kotlin skill">
+              <div class="skill-icon-wrap" style="--skill-color:#8B5CF6">
+                <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top">
+                  <span class="skill-name">Kotlin</span>
+                  <span class="skill-pct">65%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="65" style="--skill-color:#8B5CF6"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card" aria-label="C Programming skill">
+              <div class="skill-icon-wrap" style="--skill-color:#A8B9CC">
+                <i class="fas fa-microchip" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top">
+                  <span class="skill-name">C (Embedded)</span>
+                  <span class="skill-pct">68%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="68" style="--skill-color:#A8B9CC"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frontend -->
+        <div class="skills-category reveal-up">
+          <h3 class="skills-cat-title">
+            <i class="fas fa-palette" aria-hidden="true"></i> Frontend &amp; Mobile
+          </h3>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="skill-icon-wrap" style="--skill-color:#E44D26">
+                <i class="fab fa-html5" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top"><span class="skill-name">HTML5</span><span class="skill-pct">82%</span></div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="82" style="--skill-color:#E44D26"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrap" style="--skill-color:#264DE4">
+                <i class="fab fa-css3-alt" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top"><span class="skill-name">CSS3</span><span class="skill-pct">78%</span></div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="78" style="--skill-color:#264DE4"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrap" style="--skill-color:#61DAFB">
+                <i class="fab fa-react" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top"><span class="skill-name">React (Basic)</span><span class="skill-pct">50%</span></div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="50" style="--skill-color:#61DAFB"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrap" style="--skill-color:#54C5F8">
+                <i class="fas fa-mobile-screen" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top"><span class="skill-name">Flutter</span><span class="skill-pct">60%</span></div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="60" style="--skill-color:#54C5F8"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI & Emerging Tech -->
+        <div class="skills-category reveal-up">
+          <h3 class="skills-cat-title">
+            <i class="fas fa-brain" aria-hidden="true"></i> AI &amp; Emerging Technologies
+          </h3>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="skill-icon-wrap" style="--skill-color:#10B981">
+                <i class="fas fa-robot" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top"><span class="skill-name">Generative AI</span><span class="skill-pct">75%</span></div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="75" style="--skill-color:#10B981"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrap" style="--skill-color:#FF6F61">
+                <i class="fas fa-comment-dots" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top"><span class="skill-name">Prompt Engineering</span><span class="skill-pct">80%</span></div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="80" style="--skill-color:#FF6F61"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrap" style="--skill-color:#FF9900">
+                <i class="fab fa-aws" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top"><span class="skill-name">AWS Basics</span><span class="skill-pct">45%</span></div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="45" style="--skill-color:#FF9900"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrap" style="--skill-color:#4285F4">
+                <i class="fab fa-google" aria-hidden="true"></i>
+              </div>
+              <div class="skill-info">
+                <div class="skill-top"><span class="skill-name">Google Cloud</span><span class="skill-pct">50%</span></div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-fill" data-width="50" style="--skill-color:#4285F4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skills-category reveal-up">
+          <h3 class="skills-cat-title">
+            <i class="fas fa-tools" aria-hidden="true"></i> Tools &amp; Platforms
+          </h3>
+          <div class="tools-grid">
+            <div class="tool-pill">
+              <i class="fab fa-git-alt" aria-hidden="true"></i>
+              <span>Git</span>
+            </div>
+            <div class="tool-pill">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              <span>GitHub</span>
+            </div>
+            <div class="tool-pill">
+              <i class="fas fa-code" aria-hidden="true"></i>
+              <span>VS Code</span>
+            </div>
+            <div class="tool-pill">
+              <i class="fab fa-android" aria-hidden="true"></i>
+              <span>Android Studio</span>
+            </div>
+            <div class="tool-pill">
+              <i class="fas fa-rocket" aria-hidden="true"></i>
+              <span>OpenRocket</span>
+            </div>
+            <div class="tool-pill">
+              <i class="fas fa-microchip" aria-hidden="true"></i>
+              <span>Arduino IDE</span>
+            </div>
+            <div class="tool-pill">
+              <i class="fas fa-table" aria-hidden="true"></i>
+              <span>Excel</span>
+            </div>
+            <div class="tool-pill">
+              <i class="fas fa-chart-bar" aria-hidden="true"></i>
+              <span>Power BI</span>
+            </div>
+            <div class="tool-pill">
+              <i class="fas fa-stream" aria-hidden="true"></i>
+              <span>Streamlit</span>
+            </div>
+            <div class="tool-pill">
+              <i class="fab fa-docker" aria-hidden="true"></i>
+              <span>Docker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE SECTION ===== -->
+    <section id="experience" class="section experience" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">My Journey</span>
+          <h2 id="experience-heading" class="section-title">Experience &amp; <span class="gradient-text">Education</span></h2>
+          <div class="section-divider" aria-hidden="true"></div>
+        </div>
+
+        <div class="timeline-wrapper">
+          <!-- Education entries -->
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot" aria-hidden="true">
+              <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-logo edu-logo" aria-hidden="true">
+                  <i class="fas fa-university" aria-hidden="true"></i>
+                </div>
+                <div class="timeline-meta">
+                  <h3 class="timeline-role">BE Electronics &amp; Telecommunication</h3>
+                  <span class="timeline-company">Atharva College of Engineering, Atharva University</span>
+                  <span class="timeline-duration"><i class="fas fa-calendar" aria-hidden="true"></i> 2022 – 2027 · Current CGPA: 6.21</span>
+                </div>
+              </div>
+              <p class="timeline-desc">
+                Pursuing a Bachelor's degree in Electronics and Telecommunication Engineering with focus on embedded systems,
+                communication technologies, AI applications, and hardware-software integration. Active participant in technical
+                clubs and space technology initiatives.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">EXTC</span>
+                <span class="tag">Embedded Systems</span>
+                <span class="tag">IoT</span>
+                <span class="tag">Signal Processing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-right">
+            <div class="timeline-dot" aria-hidden="true">
+              <i class="fas fa-rocket" aria-hidden="true"></i>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-logo space-logo" aria-hidden="true">
+                  <i class="fas fa-satellite" aria-hidden="true"></i>
+                </div>
+                <div class="timeline-meta">
+                  <h3 class="timeline-role">Aerospace &amp; Rocketry Trainee</h3>
+                  <span class="timeline-company">India Space Lab</span>
+                  <span class="timeline-duration"><i class="fas fa-calendar" aria-hidden="true"></i> 2023 – 2024 · Certified</span>
+                </div>
+              </div>
+              <p class="timeline-desc">
+                Completed certified training in Rocketry Management and Spacecraft Dynamics. Participated in hands-on
+                rocket building workshops using OpenRocket and Open VSP simulation tools. Developed expertise in
+                aerospace engineering fundamentals and drone building workflows.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Rocketry</span>
+                <span class="tag">OpenRocket</span>
+                <span class="tag">Spacecraft Dynamics</span>
+                <span class="tag">Drone Building</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot" aria-hidden="true">
+              <i class="fas fa-microchip" aria-hidden="true"></i>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-logo embedded-logo" aria-hidden="true">
+                  <i class="fas fa-cog" aria-hidden="true"></i>
+                </div>
+                <div class="timeline-meta">
+                  <h3 class="timeline-role">Embedded Systems Design Trainee</h3>
+                  <span class="timeline-company">Maven Silicon</span>
+                  <span class="timeline-duration"><i class="fas fa-calendar" aria-hidden="true"></i> 2024 · Certification Program</span>
+                </div>
+              </div>
+              <p class="timeline-desc">
+                Completed intensive training in Embedded System Design using C programming through Maven Silicon.
+                Gained practical experience in microcontroller programming, circuit design, and hardware-software interface.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">C Programming</span>
+                <span class="tag">Microcontrollers</span>
+                <span class="tag">Circuitry</span>
+                <span class="tag">Hardware Design</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-right">
+            <div class="timeline-dot" aria-hidden="true">
+              <i class="fas fa-robot" aria-hidden="true"></i>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-logo ai-logo" aria-hidden="true">
+                  <i class="fas fa-brain" aria-hidden="true"></i>
+                </div>
+                <div class="timeline-meta">
+                  <h3 class="timeline-role">Generative AI &amp; Cloud Computing</h3>
+                  <span class="timeline-company">Google Cloud Computing Program</span>
+                  <span class="timeline-duration"><i class="fas fa-calendar" aria-hidden="true"></i> 2024 · Certified</span>
+                </div>
+              </div>
+              <p class="timeline-desc">
+                Earned certifications in Generative AI fundamentals and Google Cloud Computing. Explored LLM architectures,
+                prompt engineering techniques, and cloud deployment strategies. Applied skills in AI-powered project development.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Generative AI</span>
+                <span class="tag">Google Cloud</span>
+                <span class="tag">LLMs</span>
+                <span class="tag">Prompt Engineering</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot" aria-hidden="true">
+              <i class="fas fa-school" aria-hidden="true"></i>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-logo hsc-logo" aria-hidden="true">
+                  <i class="fas fa-book-open" aria-hidden="true"></i>
+                </div>
+                <div class="timeline-meta">
+                  <h3 class="timeline-role">Higher Secondary Education (HSC)</h3>
+                  <span class="timeline-company">Navin Svatantra Kanishta Mahavidyalay, Madalmohi</span>
+                  <span class="timeline-duration"><i class="fas fa-calendar" aria-hidden="true"></i> 2020 – 2022 · Score: 77%</span>
+                </div>
+              </div>
+              <p class="timeline-desc">
+                Completed Higher Secondary Education with a strong academic score of 77%. Built a solid foundation in
+                Mathematics, Physics, and Chemistry that prepared me for an engineering career.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Science (PCM)</span>
+                <span class="tag">77% Score</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="projects" class="section projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">What I've Built</span>
+          <h2 id="projects-heading" class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <div class="section-divider" aria-hidden="true"></div>
+          <p class="section-desc">Real-world projects spanning space technology, healthcare IoT, and software development.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: India Space Lab -->
+          <article class="project-card reveal-up" aria-label="India Space Lab project">
+            <div class="project-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/60132/pexels-photo-60132.jpeg?auto=compress&cs=tinysrgb&w=600&h=350&fit=crop"
+                alt="India Space Lab - Rocket Building Project"
+                class="project-img"
+                loading="lazy"
+              />
+              <div class="project-overlay" aria-hidden="true">
+                <div class="project-links">
+                  <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View on GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a href="#" class="project-link-btn" aria-label="View Live Demo">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-badge featured">Featured</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">India Space Lab</h3>
+              <p class="project-desc">
+                Participated in building an Open VSP Cessna-class drone and implementing an in-depth Rocket Building workflow
+                using OpenRocket. Simulated rocket flights and analyzed aerodynamics using professional simulation software.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">OpenRocket</span>
+                <span class="tech-tag">Open VSP</span>
+                <span class="tech-tag">Aerospace</span>
+                <span class="tech-tag">Simulation</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="project-btn">
+                  <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                </a>
+                <a href="#" class="project-btn project-btn-outline">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Heart Pulse Sensor -->
+          <article class="project-card reveal-up" style="animation-delay:0.1s" aria-label="Heart Pulse Sensor project">
+            <div class="project-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600&h=350&fit=crop"
+                alt="Heart Pulse Calculation Sensor - Arduino Project"
+                class="project-img"
+                loading="lazy"
+              />
+              <div class="project-overlay" aria-hidden="true">
+                <div class="project-links">
+                  <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View on GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a href="#" class="project-link-btn" aria-label="View Live Demo">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Heart Pulse Calculation Sensor</h3>
+              <p class="project-desc">
+                Designed and built a heart pulse monitoring sensor using Arduino and Raspberry Pi. Implemented chip-level
+                coding for hardware embedding and achieved complete hardware-software integration for real-time BPM monitoring.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Arduino</span>
+                <span class="tech-tag">Raspberry Pi</span>
+                <span class="tech-tag">C/C++</span>
+                <span class="tech-tag">IoT</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="project-btn">
+                  <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                </a>
+                <a href="#" class="project-btn project-btn-outline">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: IV Drip Monitoring -->
+          <article class="project-card reveal-up" style="animation-delay:0.2s" aria-label="IV Drip Monitoring project">
+            <div class="project-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=600&h=350&fit=crop"
+                alt="IV Drip Monitoring System"
+                class="project-img"
+                loading="lazy"
+              />
+              <div class="project-overlay" aria-hidden="true">
+                <div class="project-links">
+                  <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View on GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a href="#" class="project-link-btn" aria-label="View Live Demo">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-badge impact">Healthcare</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">IV Drip Monitoring System</h3>
+              <p class="project-desc">
+                Designed a smart IV drip monitoring system to track fluid levels in real-time. Implemented sensor-based
+                automated alerts (buzzer + notifications) to prevent empty drips and backflow risks, improving patient safety.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Embedded C</span>
+                <span class="tech-tag">Sensors</span>
+                <span class="tech-tag">IoT</span>
+                <span class="tech-tag">Healthcare</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="project-btn">
+                  <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                </a>
+                <a href="#" class="project-btn project-btn-outline">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Android App -->
+          <article class="project-card reveal-up" style="animation-delay:0.1s" aria-label="Android App project">
+            <div class="project-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=600&h=350&fit=crop"
+                alt="Android Application Development Project"
+                class="project-img"
+                loading="lazy"
+              />
+              <div class="project-overlay" aria-hidden="true">
+                <div class="project-links">
+                  <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View on GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a href="#" class="project-link-btn" aria-label="View Live Demo">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Android Mobile Application</h3>
+              <p class="project-desc">
+                Developed an Android application using Kotlin with modern Material Design principles. Built as part of
+                Android App Development certification, implementing clean architecture and responsive UI components.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Kotlin</span>
+                <span class="tech-tag">Android</span>
+                <span class="tech-tag">Material UI</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="project-btn">
+                  <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                </a>
+                <a href="#" class="project-btn project-btn-outline">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: AI Chatbot -->
+          <article class="project-card reveal-up" style="animation-delay:0.2s" aria-label="AI Chatbot project">
+            <div class="project-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600&h=350&fit=crop"
+                alt="AI Generative Model Project"
+                class="project-img"
+                loading="lazy"
+              />
+              <div class="project-overlay" aria-hidden="true">
+                <div class="project-links">
+                  <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View on GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a href="#" class="project-link-btn" aria-label="View Live Demo">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-badge ai">AI/ML</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Generative AI Application</h3>
+              <p class="project-desc">
+                Built an AI-powered application leveraging Generative AI APIs with prompt engineering techniques.
+                Deployed using Streamlit for an interactive web interface with real-time response generation capabilities.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Gen AI</span>
+                <span class="tech-tag">Streamlit</span>
+                <span class="tech-tag">LLM APIs</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="project-btn">
+                  <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                </a>
+                <a href="#" class="project-btn project-btn-outline">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Data Analytics -->
+          <article class="project-card reveal-up" style="animation-delay:0.3s" aria-label="Data Analytics project">
+            <div class="project-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600&h=350&fit=crop"
+                alt="Data Analytics Dashboard Project"
+                class="project-img"
+                loading="lazy"
+              />
+              <div class="project-overlay" aria-hidden="true">
+                <div class="project-links">
+                  <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View on GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a href="#" class="project-link-btn" aria-label="View Live Demo">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Data Analytics Dashboard</h3>
+              <p class="project-desc">
+                Created an interactive data analytics dashboard using SQL for database management and Power BI for
+                visualization. Applied advanced Excel functions and Google Sheets for data cleaning and analysis.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">Excel</span>
+                <span class="tech-tag">Python</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="project-btn">
+                  <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                </a>
+                <a href="#" class="project-btn project-btn-outline">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RESUME SECTION ===== -->
+    <section id="resume" class="section resume-section" aria-labelledby="resume-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">My Resume</span>
+          <h2 id="resume-heading" class="section-title">Download My <span class="gradient-text">Resume</span></h2>
+          <div class="section-divider" aria-hidden="true"></div>
+        </div>
+
+        <div class="resume-card reveal-up">
+          <div class="resume-illustration" aria-hidden="true">
+            <div class="resume-doc">
+              <div class="resume-doc-header">
+                <div class="doc-avatar"></div>
+                <div class="doc-lines">
+                  <div class="doc-line wide"></div>
+                  <div class="doc-line medium"></div>
+                </div>
+              </div>
+              <div class="doc-section">
+                <div class="doc-line medium"></div>
+                <div class="doc-line wide"></div>
+                <div class="doc-line short"></div>
+              </div>
+              <div class="doc-section">
+                <div class="doc-line medium"></div>
+                <div class="doc-line wide"></div>
+                <div class="doc-line medium"></div>
+                <div class="doc-line short"></div>
+              </div>
+              <div class="doc-section">
+                <div class="doc-line short"></div>
+                <div class="doc-line medium"></div>
+                <div class="doc-line wide"></div>
+              </div>
+            </div>
+            <div class="resume-glow" aria-hidden="true"></div>
+          </div>
+
+          <div class="resume-info">
+            <div class="resume-badge-row">
+              <span class="resume-badge"><i class="fas fa-check-circle" aria-hidden="true"></i> Up to date</span>
+              <span class="resume-badge"><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF Format</span>
+            </div>
+            <h3 class="resume-card-title">Aarya Shikhare</h3>
+            <p class="resume-card-subtitle">Electronics &amp; Telecommunication Engineer</p>
+            <p class="resume-card-desc">
+              My resume outlines my education, technical skills, certifications, and projects.
+              It's a comprehensive overview of my journey from HSC to engineering and beyond.
+            </p>
+
+            <div class="resume-highlights">
+              <div class="resume-highlight">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <span>BE EXTC · Atharva University</span>
+              </div>
+              <div class="resume-highlight">
+                <i class="fas fa-certificate" aria-hidden="true"></i>
+                <span>5+ Industry Certifications</span>
+              </div>
+              <div class="resume-highlight">
+                <i class="fas fa-rocket" aria-hidden="true"></i>
+                <span>Space Tech &amp; IoT Projects</span>
+              </div>
+            </div>
+
+            <div class="resume-buttons">
+              <a href="assets/Aarya_Shikhare_original_resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary resume-btn">
+                <i class="fas fa-eye" aria-hidden="true"></i>
+                View Resume
+              </a>
+              <a href="assets/Aarya_Shikhare_original_resume.pdf" download class="btn btn-secondary resume-btn">
+                <i class="fas fa-download" aria-hidden="true"></i>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS SECTION ===== -->
+    <section id="certifications" class="section certifications" aria-labelledby="cert-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">Achievements</span>
+          <h2 id="cert-heading" class="section-title">My <span class="gradient-text">Certifications</span></h2>
+          <div class="section-divider" aria-hidden="true"></div>
+        </div>
+
+        <div class="certs-grid">
+
+          <div class="cert-card reveal-up">
+            <div class="cert-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                alt="Generative AI Certification"
+                class="cert-img"
+                loading="lazy"
+              />
+              <div class="cert-overlay" aria-hidden="true">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-icon cert-icon-ai" aria-hidden="true"><i class="fas fa-robot" aria-hidden="true"></i></div>
+              <h3 class="cert-title">Generative AI</h3>
+              <span class="cert-issuer"><i class="fas fa-award" aria-hidden="true"></i> Google / Industry Cert.</span>
+              <a href="#" class="cert-btn">View Certificate <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="cert-card reveal-up" style="animation-delay:0.1s">
+            <div class="cert-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/60132/pexels-photo-60132.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                alt="Rocketry Management & Spacecraft Dynamics Certification"
+                class="cert-img"
+                loading="lazy"
+              />
+              <div class="cert-overlay" aria-hidden="true">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-icon cert-icon-space" aria-hidden="true"><i class="fas fa-rocket" aria-hidden="true"></i></div>
+              <h3 class="cert-title">Rocketry &amp; Spacecraft Dynamics</h3>
+              <span class="cert-issuer"><i class="fas fa-award" aria-hidden="true"></i> India Space Lab</span>
+              <a href="#" class="cert-btn">View Certificate <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="cert-card reveal-up" style="animation-delay:0.2s">
+            <div class="cert-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/586063/pexels-photo-586063.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                alt="Indian Space Lab Certification"
+                class="cert-img"
+                loading="lazy"
+              />
+              <div class="cert-overlay" aria-hidden="true">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-icon cert-icon-space" aria-hidden="true"><i class="fas fa-satellite" aria-hidden="true"></i></div>
+              <h3 class="cert-title">Indian Space Lab</h3>
+              <span class="cert-issuer"><i class="fas fa-award" aria-hidden="true"></i> India Space Lab Program</span>
+              <a href="#" class="cert-btn">View Certificate <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="cert-card reveal-up" style="animation-delay:0.1s">
+            <div class="cert-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                alt="Android App Development Certification"
+                class="cert-img"
+                loading="lazy"
+              />
+              <div class="cert-overlay" aria-hidden="true">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-icon cert-icon-android" aria-hidden="true"><i class="fab fa-android" aria-hidden="true"></i></div>
+              <h3 class="cert-title">Android App Development</h3>
+              <span class="cert-issuer"><i class="fas fa-award" aria-hidden="true"></i> Google / Industry Cert.</span>
+              <a href="#" class="cert-btn">View Certificate <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="cert-card reveal-up" style="animation-delay:0.2s">
+            <div class="cert-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                alt="Google Cloud Computing Certification"
+                class="cert-img"
+                loading="lazy"
+              />
+              <div class="cert-overlay" aria-hidden="true">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-icon cert-icon-cloud" aria-hidden="true"><i class="fab fa-google" aria-hidden="true"></i></div>
+              <h3 class="cert-title">Google Cloud Computing</h3>
+              <span class="cert-issuer"><i class="fas fa-award" aria-hidden="true"></i> Google Cloud</span>
+              <a href="#" class="cert-btn">View Certificate <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="section contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">Get In Touch</span>
+          <h2 id="contact-heading" class="section-title">Contact <span class="gradient-text">Me</span></h2>
+          <div class="section-divider" aria-hidden="true"></div>
+          <p class="section-desc">Open to internship opportunities, collaborations, and interesting conversations!</p>
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="contact-info-col reveal-left">
+            <h3 class="contact-subtitle">Let's work together</h3>
+            <p class="contact-bio">
+              Whether you have an internship opportunity, want to collaborate on a project, or just want to say hello —
+              my inbox is always open. I'll do my best to get back to you quickly!
+            </p>
+
+            <div class="contact-items">
+              <a href="mailto:aaryak012@gmail.com" class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                <div class="contact-item-info">
+                  <span class="contact-item-label">Email</span>
+                  <span class="contact-item-value">aaryak012@gmail.com</span>
+                </div>
+              </a>
+              <a href="tel:+919321562271" class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true"><i class="fas fa-phone" aria-hidden="true"></i></div>
+                <div class="contact-item-info">
+                  <span class="contact-item-label">Phone</span>
+                  <span class="contact-item-value">+91 9321562271</span>
+                </div>
+              </a>
+              <div class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+                <div class="contact-item-info">
+                  <span class="contact-item-label">Location</span>
+                  <span class="contact-item-value">Mumbai, Maharashtra, India</span>
+                </div>
+              </div>
+              <a href="https://linkedin.com/in/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="contact-item">
+                <div class="contact-item-icon" style="--c:#0A66C2" aria-hidden="true"><i class="fab fa-linkedin" aria-hidden="true"></i></div>
+                <div class="contact-item-info">
+                  <span class="contact-item-label">LinkedIn</span>
+                  <span class="contact-item-value">linkedin.com/in/aarya-shikhare</span>
+                </div>
+              </a>
+              <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="contact-item">
+                <div class="contact-item-icon" style="--c:#fff" aria-hidden="true"><i class="fab fa-github" aria-hidden="true"></i></div>
+                <div class="contact-item-info">
+                  <span class="contact-item-label">GitHub</span>
+                  <span class="contact-item-value">github.com/aarya-shikhare</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-col reveal-right">
+            <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Full Name <span class="required" aria-hidden="true">*</span></label>
+                <div class="input-wrap">
+                  <i class="fas fa-user input-icon" aria-hidden="true"></i>
+                  <input type="text" id="form-name" name="name" class="form-input" placeholder="Your full name" required autocomplete="name" />
+                </div>
+                <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">Email Address <span class="required" aria-hidden="true">*</span></label>
+                <div class="input-wrap">
+                  <i class="fas fa-envelope input-icon" aria-hidden="true"></i>
+                  <input type="email" id="form-email" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" />
+                </div>
+                <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label">Subject <span class="required" aria-hidden="true">*</span></label>
+                <div class="input-wrap">
+                  <i class="fas fa-tag input-icon" aria-hidden="true"></i>
+                  <input type="text" id="form-subject" name="subject" class="form-input" placeholder="What's this about?" required />
+                </div>
+                <span class="form-error" id="subject-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Message <span class="required" aria-hidden="true">*</span></label>
+                <div class="input-wrap">
+                  <i class="fas fa-comment-alt input-icon input-icon-top" aria-hidden="true"></i>
+                  <textarea id="form-message" name="message" class="form-input form-textarea" placeholder="Write your message..." rows="5" required></textarea>
+                </div>
+                <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">
+                <span class="submit-text">
+                  <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                  Send Message
+                </span>
+                <span class="submit-loading" style="display:none" aria-hidden="true">
+                  <i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Sending...
+                </span>
+              </button>
+
+              <div id="form-success" class="form-success" style="display:none" role="alert">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                Message sent! I'll get back to you soon.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo footer-logo" aria-label="Home">
+            <span class="logo-text">AS</span>
+            <span class="logo-dot"></span>
+          </a>
+          <p class="footer-tagline">
+            Electronics Engineer · AI Enthusiast · Space Tech Explorer
+          </p>
+          <div class="footer-socials">
+            <a href="https://linkedin.com/in/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/aarya-shikhare" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:aaryak012@gmail.com" class="social-icon" aria-label="Email">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Expertise</h4>
+          <ul class="footer-nav">
+            <li><a href="#skills">Embedded Systems</a></li>
+            <li><a href="#skills">Generative AI</a></li>
+            <li><a href="#skills">Android Development</a></li>
+            <li><a href="#skills">Rocketry &amp; Aerospace</a></li>
+            <li><a href="#skills">SQL &amp; Data</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h4 class="footer-col-title">Contact Info</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fas fa-envelope" aria-hidden="true"></i><span>aaryak012@gmail.com</span></li>
+            <li><i class="fas fa-phone" aria-hidden="true"></i><span>+91 9321562271</span></li>
+            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Mumbai, Maharashtra</span></li>
+          </ul>
+          <a href="assets/Aarya_Shikhare_original_resume.pdf" download class="footer-resume-btn">
+            <i class="fas fa-download" aria-hidden="true"></i> Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">
+          &copy; <span id="footer-year">2025</span> Aarya Shikhare. Crafted with <i class="fas fa-heart" aria-hidden="true" style="color:#ef4444"></i> in Mumbai.
+        </p>
+        <p class="footer-made-with">
+          <i class="fas fa-code" aria-hidden="true"></i> Built with HTML, CSS &amp; JavaScript
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back To Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
 </html>
