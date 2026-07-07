@@ -503,31 +503,14 @@ function initFooterYear() {
 }
 
 /* ================================================================
-   15. PROFILE IMAGE FALLBACK
+   15. PROFILE IMAGE FALLBACK (no-op — image set directly in HTML)
    ================================================================ */
-function initProfileFallback() {
-  const img = document.getElementById('profile-img');
-  if (!img) return;
-
-  // If the user's actual profile image exists as profile.jpg, swap to it
-  const localSrc = 'images/profile.jpg';
-  const testImg  = new Image();
-  testImg.onload = () => { img.src = localSrc; };
-  testImg.src    = localSrc;
-}
+function initProfileFallback() {}
 
 /* ================================================================
-   16. ABOUT images - same fallback
+   16. ABOUT images (no-op — image set directly in HTML)
    ================================================================ */
-function initAboutImages() {
-  const aboutImg = document.querySelector('.about-img');
-  if (!aboutImg) return;
-
-  const localSrc = 'images/profile.jpg';
-  const testImg  = new Image();
-  testImg.onload = () => { aboutImg.src = localSrc; };
-  testImg.src    = localSrc;
-}
+function initAboutImages() {}
 
 /* ================================================================
    17. KEYBOARD ACCESSIBILITY - Escape closes mobile menu
